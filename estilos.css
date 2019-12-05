@@ -357,7 +357,7 @@ header nav ul li .sub li a {
 	font-size: 20px;
 }
 
-#destino2, #fecha2, #hora2, #per2 {
+#destino2, #fecha2, #hora2, #per2, #destino3, #fecha3, #hora3{
 	margin-left: 10%;
 	border: none;
 	border-bottom: 1px solid #002B5C;
