@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Sky is the limit</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<script type="text/javascript" src="funciones.js"></script>		
+	<link rel="icon" type="image/jpg" href="banner.png" />
+
+</head>
+<body>
+
+	<div id="banner">
+		<img id="img1" src="banner.png">
+	</div>
+
+	<header>
+		<nav>
+			<ul>
+
+				<li><a href="int_gral.html">Inicio</a></li>
+
+				<li class="submenu"><a href="#">Destinos</a>
+					<ul class="sub">
+						<li><a href="int_gral.html#mex">México.</a></li>
+						<li><a href="int_gral.html#eu">Estados Unidos.</a></li>
+						<li><a href="int_gral.html#can">Canadá.</a></li>
+					</ul>
+				</li>
+
+				<li class="submenu"><a href="#">Registrar / Iniciar Sesión</a>
+					<ul class="sub">
+						<li><a href="log_us.html">Modo Usuario.</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">Contacto</a>
+					<ul class="sub">
+						<li><a href="https://www.facebook.com/santiago.vaqueroperez">Santiago Vaquéro Pérez.</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">Acerca De</a> 
+					<ul class="sub">
+						<li><a href="int_gral.html#ultimo">Sobre Nosotros.</a></li>
+					</ul>
+				</li>
+		
+			</ul>
+		</nav>
+	</header> <hr> <br><br>
+
+	<div id="contorno">
+
+		<div id="img_log">
+			<img id="log_img" src="adm.png">
+		</div>
+
+		<div id="tex_log">
+			<div id="borde">
+				<h2 style="margin-left: 10px; color: #002B5C; margin-top: 20%;">Hola, <br> Bienvenido al inicio de sesión de empresa.</h2> <br>
+
+				<form action="int_adm.html" name="formulario" method="post" onsubmit="return validar();">
+
+					<label id="usuario" for="admin">Usuario</label> <br>
+					<input type="text" name="usuario2" id="usuario2" maxlength="20" placeholder="Ingresa el Usuario"> <br> <br>
+
+					<label id="clave" for="clave">Contraseña</label> <br>
+					<input type="password" id="clave2" name="clave2" placeholder="Ingresa la contraseña" > <br> <br>
+
+					<input type="submit" id="boton" name="boton" value="Ingresar"> <br><br><br><br><br><br><br>
+
+				</form>
+			</div>
+		</div>
+		
+	</div>
+
+	<div id="pie">
+		<a href="#"><img src="fb.png" style="margin-left: 33%;"></a>
+		<a href="#"><img src="ig.png"></a>
+		<div id="correo">
+			<a href="#"><img src="correo.png" ></a>
+		</div>
+		<p style="text-align: center;">&copy; Todos los derechos reservados. <b>|</b> Diseño: <a href="https://www.instagram.com/vpsantiago10/" style="color: white;">Vaquero Pérez Santiago</a></p>
+	</div>
+
+</body>
+</html>
