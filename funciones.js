@@ -64,7 +64,7 @@ function validar2() {
 
   	 
     if(login[i].usuario == usuario && login[i].contraseña == contraseña) {
-			location.href="int_usu.html";	
+			location.href="https://santiagovp10.github.io/alfas1/int_us.html";	
 		}
  
 	}
