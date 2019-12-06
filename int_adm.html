@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="estilos.css">
 	<link rel="icon" type="image/jpg" href="banner.png" />
 </head>
-<body>
+<body onload="mostrar3();">
 
 	<div id="banner">
 		<img id="img1" src="banner.png">
@@ -16,20 +16,19 @@
 		<nav>
 			<ul>
 
-				<li><a href="int_gral.html">Inicio</a></li>
+				<li><a href="index.html">Inicio</a></li>
 
 				<li class="submenu"><a href="#">Destinos</a>
 					<ul class="sub">
-						<li><a href="int_gral.html#mex">México.</a></li>
-						<li><a href="int_gral.html#eu">Estados Unidos.</a></li>
-						<li><a href="int_gral.html#can">Canadá.</a></li>
+						<li><a href="index.html#mex">México.</a></li>
+						<li><a href="index.html#eu">Estados Unidos.</a></li>
+						<li><a href="index.html#can">Canadá.</a></li>
 					</ul>
 				</li>
 
 				<li class="submenu"><a href="#">Registrar / Iniciar Sesión</a>
 					<ul class="sub">
 						<li><a href="log_us.html">Modo Usuario.</a></li>
-						<li><a href="log_ad.html">Modo Compañía.</a></li>
 					</ul>
 				</li>
 
@@ -62,27 +61,38 @@
 			<button id="boton3" type="submit" onclick="agregar()">Agregar </button> <br>
 		</form>
 
-		<div id="enlistar"></div>
 	</div>
 
 	<div id="eli">
 		<a name="eliminar"><form id="contenedor3"></a>
 			<label id="destino" for="destino">Destino</label> <br>
-			<input type="text" id="destino2" placeholder="Ingresa el destino"> <br><br>
-		
-			<label id="fecha" for="fecha">Fecha</label> <br>
-			<input type="text" id="fecha2" placeholder="Ingresa la fecha del viaje"><br><br>
-		
-			<label id="hora" for="hora">Horario</label> <br>
-			<input type="text" id="hora2" placeholder="Ingresa el horario del viaje en formato 24Hrs"><br><br>
-		
-			<label id="cos_per" for="cos_per">Costo por persona</label> <br>
-			<input type="text" id="cos_per2" placeholder="Ingresa el costo del boleto por persona"> <br><br><br>
+			<input type="text" id="destino4" placeholder="Ingresa el destino"> <br><br>
 
-			<input  id="boton4" type="submit" value="Buscar"> <br> <br> <br>
-			<input  id="boton5" type="submit" value="Eliminar" onclick="eliminar()"> <br>
+			<label id="fecha" for="fecha">Fecha</label> <br>
+			<input type="text" id="fecha4" placeholder="Ingresa el destino"> <br><br>
+
+			<label id="hora" for="hora">Horario</label> <br>
+			<input type="text" id="hora4" placeholder="Ingresa el horario del viaje en formato 24Hrs"> <br><br>
+		
+
+
+			
+		<input  id="boton5" type="submit" value="Eliminar" onclick="eliminar()" ><br>
 		</form>
 	</div>
+
+	<div id="vuelos_dis">
+
+		<div id="enlistar">
+			<h1>Vuelos Disponibles</h1><br>
+		</div>
+		</div>
+
+<div id="vuelos_dis3">
+		<div id="enlistar2">
+			<h1>Vuelos Reservados</h1><br>
+		</div>
+		</div>
 
 
 

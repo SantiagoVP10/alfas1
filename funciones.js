@@ -66,13 +66,14 @@ function validar3(){
 
   	 
     if(login[i].usuario == usuario && login[i].contraseña == contraseña) {
-			location.href="https://santiagovp10.github.io/alfas1/";	
+			location.href="https://santiagovp10.github.io/alfas1/int_usu.html";	
 		}
  
 	}
 				alert("Usuario o contraseña incorrectos");
 
-  }else{
+
+}else{
 		alert("Ningún campo puede estar vacío");
 	}
 }
@@ -108,11 +109,11 @@ function agregar(){
 		localStorage.setItem('listado', JSON.stringify(listado));
 
 	}
-	mostrar();
 	document.getElementById('contenedor2').reset();
 }else{
 	alert("Ningún campo puede estar vacío");
 }
+location.reload();
 }
 
 
@@ -120,15 +121,20 @@ function agregar(){
 function eliminar() {
   
   let listado = JSON.parse(localStorage.getItem('listado'));
-  let destino = document.getElementById('destino2').value;
- 
+  let destino4 = document.getElementById('destino4').value;
+  let fecha4 = document.getElementById('fecha4').value;
+  let hora4 = document.getElementById('hora4').value;
+
+
+
   for(let i = 0; i < listado.length; i++) {
-    if(listado[i].destino == destino) {
+    if(listado[i].destino == destino4 && listado[i].fecha == fecha4 && listado[i].horario == hora4) {
       listado.splice(i, 1);
     }
   }
   
   localStorage.setItem('listado', JSON.stringify(listado));
+  location.reload();
 }
 
 
@@ -145,24 +151,22 @@ function mostrar() {
     let costo = listado[i].costo;
     let vuelos = listado[i].vuelos;
 
-
-  document.getElementById('enlistar').innerHTML += destino; 
-  document.getElementById('enlistar').innerHTML += fecha;
-  document.getElementById('enlistar').innerHTML += horario;
-  document.getElementById('enlistar').innerHTML += costo;
-  document.getElementById('enlistar').innerHTML += vuelos;
-
+document.getElementById('enlistar').innerHTML +=`<div class="card mb-3">
+        <div id="conte">
+          <p>Destino: ${destino} <br> Fecha: ${fecha} <br> Horario: ${horario} <br> Costo por boleto: ${costo} <br> Vuelos disponibles: ${vuelos} 
+          </p>
+        </div>
+      </div>`;
 } 
 }
 
 mostrar();
-
 function mostrar2(){
   mostrar();
 }
 
 
-function reservar(){
+function reservar(e){
   let destino2 = document.getElementById('destino3').value;
   let fecha2 = document.getElementById('fecha3').value;
   let hora2 = document.getElementById('hora3').value;
@@ -172,7 +176,7 @@ function reservar(){
 
 
   let listado = JSON.parse(localStorage.getItem('listado'));
-
+if (destino2 != "" && fecha2 != "" && hora2 != "" && asientos != "" ) {
   for(let i = 0; i < listado.length; i++) {
 
     if (listado[i].destino == destino2 && listado[i].fecha == fecha2 && listado[i].horario == hora2) {
@@ -180,7 +184,35 @@ function reservar(){
       for(let i = 0; i < listado.length; i++) {
         let vuelos = parseFloat(listado[i].vuelos);
         if (vuelos > asientos2) {
-          alert("Vuelo disponible. Favor de realizar su cotización.");
+          alert("Vuelo reservado. Para realizar el pago de tus boletos contacta este numero: 4272010048.");
+
+          let lista = {
+    destino2,
+    fecha2,
+    hora2,
+    asientos
+  };
+
+  if (localStorage.getItem('listado2') === null) {
+    let listado2 = [];
+    listado2.push(lista);
+    localStorage.setItem('listado2', JSON.stringify(listado2));
+  }else{
+    let listado2 = JSON.parse(localStorage.getItem('listado2'));
+    listado2.push(lista);
+    localStorage.setItem('listado2', JSON.stringify(listado2));
+
+  }
+  
+  document.getElementById('contenedor').reset();
+  mostrar3();
+  e.preventDefault();
+
+  
+        
+
+
+
         }else{
           alert("Lo sentimos, por el momento la cantidad de boletos disponibles para este vuelo es insuficiente.");
         }
@@ -189,16 +221,51 @@ function reservar(){
       alert("Vuelo no disponible. Consulta la sección de vuelos.");
     }
 }
+}else{
+  alert("Ningún campo puede estar vacío");
+}
 }
 
 
 
+function mostrar3(){
 
-// function cotizar(){
-//     let num = document.getElementById('per2').value;
-//        let listado = JSON.parse(localStorage.getItem('listado'));
-//     console.log(costo);
+  let listado2 = JSON.parse(localStorage.getItem('listado2'));
 
-//     alert()
 
-// }
+    for(let i = 0; i < listado2.length; i++) {
+
+    let destino2 = listado2[i].destino2;
+    let fecha2 = listado2[i].fecha2;
+    let hora2 = listado2[i].hora2;
+    let asientos = listado2[i].asientos;
+
+
+  document.getElementById('enlistar2').innerHTML +=`<div class="card mb-3">
+        <div id="conte2">
+          <p>Destino: ${destino2} <br> Fecha: ${fecha2} <br> Horario: ${hora2} <br> Asientos ocupados: ${asientos}
+          </p>
+        </div>
+      </div>`;
+
+} 
+}
+
+function eliminar2() {
+  
+  let listado2 = JSON.parse(localStorage.getItem('listado2'));
+  let destino3 = document.getElementById('destino3').value;
+  let fecha3 = document.getElementById('fecha3').value;
+  let hora3 = document.getElementById('hora3').value;
+
+
+
+  for(let i = 0; i < listado2.length; i++) {
+    if(listado2[i].destino2 == destino3 && listado2[i].fecha2 == fecha3 && listado2[i].hora2 == hora3) {
+      listado2.splice(i, 1);
+    }alert("Vuelo cancelado exitosamente.")
+  }
+  
+  localStorage.setItem('listado2', JSON.stringify(listado2));
+  location.reload();
+}

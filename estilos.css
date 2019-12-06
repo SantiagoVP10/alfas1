@@ -357,7 +357,7 @@ header nav ul li .sub li a {
 	font-size: 20px;
 }
 
-#destino2, #fecha2, #hora2, #per2, #destino3, #fecha3, #hora3{
+#destino2, #fecha2, #hora2, #per2, #destino3, #fecha3, #hora3, #destino4, #hora4, #fecha4{
 	margin-left: 10%;
 	border: none;
 	border-bottom: 1px solid #002B5C;
@@ -443,6 +443,56 @@ header nav ul li .sub li a {
 	color: #002B5C;
 
 }
+
+#vuelos_dis{
+	
+	width: 950px;
+	background-color: transparent;
+	margin-left: 200px;
+	margin-top: 1170px;
+	border-radius: 45px;
+}
+
+#vuelos_dis3{
+	
+	width: 950px;
+	background-color: transparent;
+	margin-left: 200px;
+	margin-top: 50px;
+	border-radius: 45px;
+}
+
+#enlistar, #enlistar2{
+		border: 2px solid #ffffff;
+		padding: 100px;
+		border-radius: 45px;
+
+
+}
+
+#vuelos_dis2{
+	
+	width: 1220px;
+	background-color: transparent;
+	margin-top: -70px;
+	margin-left: 65px;
+	border-radius: 45px;
+}
+
+#conte, #conte2{
+		border: 2px solid #002B5C;
+		margin-bottom: 10px;
+
+
+}
+
+/*#enlistar3{
+		border: 2px solid #ffffff;
+		padding: 100px;
+		border-radius: 45px;
+
+
+}*/
 
 
 
